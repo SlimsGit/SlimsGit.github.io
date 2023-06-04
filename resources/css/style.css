@@ -1,21 +1,28 @@
 body {
-    padding-bottom: 50px;
+    padding-bottom: 20%;
+    font-family: sans-serif;
 }
 
 #centerimg {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 250px;
-    height: 175px;
+    width: 50%;
+    height: 50%;
 }
 
 #title {
-    font-size: 32px;
+    font-size: 250%;
     text-align: center;
 }
 
 #basetext {
-    font-size: 10px;
+    font-size: 150%;
     text-align: center;
+}
+
+#leftcenter {
+    margin: auto;
+    width: 640px; 
+    padding: 50px; 
 }
