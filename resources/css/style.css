@@ -1,3 +1,4 @@
+
 #centerimg {
     display: block;
     margin-left: auto;
@@ -7,11 +8,11 @@
 }
 
 #title {
-    font-size: 5rem;
+    font-size: 32px;
     text-align: center;
 }
 
 #centertext {
-    font-size: 2rem;
+    font-size: 12px;
     text-align: center;
 }
