@@ -1,10 +1,13 @@
+body {
+    padding-bottom: 50px;
+}
 
 #centerimg {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
-    height: 50%;
+    width: 250px;
+    height: 175px;
 }
 
 #title {
@@ -13,6 +16,6 @@
 }
 
 #basetext {
-    font-size: 12px;
+    font-size: 10px;
     text-align: center;
 }
