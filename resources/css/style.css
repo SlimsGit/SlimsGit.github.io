@@ -19,6 +19,9 @@ body {
 #basetext {
     font-size: 150%;
     text-align: center;
+    margin: auto;
+    width: 1250px; 
+    padding: 50px; 
 }
 
 #leftcenter {
