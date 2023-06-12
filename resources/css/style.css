@@ -34,8 +34,8 @@ body {
 
 #discord-logo {
     display: inline;
-    height: fit-content;
-    width: fit-content;
+    height: 12px;
+    width: 12px;
 }
 
 #btn {
