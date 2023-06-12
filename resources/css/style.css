@@ -33,9 +33,9 @@ body {
 }
 
 #discord-logo {
-    font-size: 250%;
     display: inline;
-    text-align: center;
+    height: fit-content;
+    width: fit-content;
 }
 
 #btn {
