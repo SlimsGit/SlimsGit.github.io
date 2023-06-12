@@ -38,8 +38,8 @@
                 .then((result) => result.json())
                 .then((response) => {
                     const username = response.username;
-                    const avatar = response.avatarUrl
-                    const id = response.id
+                    const avatar = response.avatarUrl;
+                    const id = response.id;
                     // Set the welcome username string
                     document.getElementById('name').innerText = `${username}`;
 
@@ -47,6 +47,7 @@
                     document.getElementById("avatar").src = avatar;
                 })
                 .catch(console.error);
+                console.log(response);
         };
 
     </script>
