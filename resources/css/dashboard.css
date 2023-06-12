@@ -11,3 +11,7 @@
     margin: 3;
     border-radius: 50%;
 }
+
+#name {
+    font-weight: bold;
+}
