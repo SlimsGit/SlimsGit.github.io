@@ -31,3 +31,8 @@ body {
     padding-right: 20%;
     padding-left: 20%; 
 }
+
+#cordlogin {
+    font-size: 250%;
+    text-align: center;
+}
