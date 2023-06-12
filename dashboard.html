@@ -19,7 +19,7 @@
 
     <script>
         let tokenType; // Declare tokenType variable
-
+        let avatarUrl = user.displayAvatarURL()
         window.onload = () => {
             const fragment = new URLSearchParams(window.location.hash.slice(1));
             const accessToken = fragment.get('access_token');
@@ -37,12 +37,14 @@
             })
                 .then((result) => result.json())
                 .then((response) => {
-                    const { username, avatar, id } = response;
+                    const username = response.username;
+                    const avatar = response.avatarUrl
+                    const id = response.id
                     // Set the welcome username string
                     document.getElementById('name').innerText = `${username}`;
 
                     // Set the avatar image by constructing a URL to access Discord's CDN
-                    document.getElementById("avatar").src = `https://cdn.discordapp.com/avatars/${id}/${avatar}.jpg`;
+                    document.getElementById("avatar").src = avatarUrl;
                 })
                 .catch(console.error);
         };
