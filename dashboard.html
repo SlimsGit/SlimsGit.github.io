@@ -18,33 +18,35 @@
     </div>
 
     <script>
+        let tokenType; // Declare tokenType variable
+
         window.onload = () => {
-        const fragment = new URLSearchParams(window.location.hash.slice(1));
-        const [accessToken, tokenType] = [fragment.get('access_token'), fragment.get('token_type')];
+            const fragment = new URLSearchParams(window.location.hash.slice(1));
+            const accessToken = fragment.get('access_token');
+            tokenType = fragment.get('token_type'); // Assign tokenType a value from the URL fragment
 
-        if (!accessToken) {
-            window.location.href('/')
-            return (document.getElementById('login').style.display = 'block');
-        }
-
-
-        };
+            if (!accessToken) {
+                window.location.href = '/';
+                return (document.getElementById('login').style.display = 'block');
+            }
 
             fetch('https://discord.com/api/users/@me', {
                 headers: {
                     authorization: `${tokenType} ${accessToken}`,
                 },
             })
-            .then(result => result.json())
-            .then(response => {
-                const { username, discriminator, avatar, id} = response;
-                //set the welcome username string
-                document.getElementById('name').innerText = ` ${username}#${discriminator}`;
+                .then((result) => result.json())
+                .then((response) => {
+                    const { username, discriminator, avatar, id } = response;
+                    // Set the welcome username string
+                    document.getElementById('name').innerText = ` ${username}#${discriminator}`;
 
-                //set the avatar image by constructing a url to access discord's cdn
-                document.getElementById("avatar").src = `https://cdn.discordapp.com/avatars/${id}/${avatar}.jpg`;
-            })
-            .catch(console.error);
+                    // Set the avatar image by constructing a URL to access Discord's CDN
+                    document.getElementById("avatar").src = `https://cdn.discordapp.com/avatars/${id}/${avatar}.jpg`;
+                })
+                .catch(console.error);
+        };
+
     </script>
 </body>
 </html>
