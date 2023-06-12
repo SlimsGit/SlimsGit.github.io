@@ -48,7 +48,7 @@
                     if (avatar == null) {
                         document.getElementById("avatar").src = 'https://ia903204.us.archive.org/4/items/discordprofilepictures/discordblue.png';
                     } else {
-                        document.getElementById("avatar").src = 'https://cdn.discordapp.com/avatars/${id}/${avatar}.jpg';
+                        document.getElementById("avatar").src = `https://cdn.discordapp.com/avatars/${id}/${avatar}.jpg`;
                     }
                 })
                 .catch(console.error);
