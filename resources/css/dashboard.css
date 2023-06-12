@@ -10,12 +10,13 @@ body {
 }
 
 #avatar {
-    height: 12px;
-    width: 12px;
+    height: 8%;
+    width: 8%;
     margin: 3px;
     border-radius: 50%;
 }
 
 #name {
+    font-size: 200%;
     font-weight: bold;
 }
