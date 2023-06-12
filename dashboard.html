@@ -37,9 +37,9 @@
             })
                 .then((result) => result.json())
                 .then((response) => {
-                    const { username, discriminator, avatar, id } = response;
+                    const { username, avatar, id } = response;
                     // Set the welcome username string
-                    document.getElementById('name').innerText = ` ${username}#${discriminator}`;
+                    document.getElementById('name').innerText = `${username}`;
 
                     // Set the avatar image by constructing a URL to access Discord's CDN
                     document.getElementById("avatar").src = `https://cdn.discordapp.com/avatars/${id}/${avatar}.jpg`;
