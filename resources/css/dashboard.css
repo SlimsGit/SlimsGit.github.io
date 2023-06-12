@@ -1,14 +1,17 @@
 body {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
     align-items: center;
     justify-items: center;
-    background: darkgray;
+    background: #36393e;
     color: white;
 }
 
 #avatar {
-    height: 12;
-    width: 12;
-    margin: 3;
+    height: 12px;
+    width: 12px;
+    margin: 3px;
     border-radius: 50%;
 }
 
