@@ -40,9 +40,7 @@
             })
                 .then((result) => result.json())
                 .then((response) => {
-                    const username = response;
-                    const avatar = response;
-                    const id = response;
+                    const { username, avatar, id} = response;
                     // Set the welcome username string
                     document.getElementById('name').innerText = `${username}`;
 
