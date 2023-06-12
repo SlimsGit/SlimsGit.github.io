@@ -1,0 +1,13 @@
+.centerall {
+    align-items: center;
+    justify-items: center;
+    background: darkgray;
+    color: white;
+}
+
+#avatar {
+    height: 12;
+    width: 12;
+    margin: 3;
+    border-radius: 50%;
+}

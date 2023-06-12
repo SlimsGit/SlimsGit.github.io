@@ -4,14 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <base href="/">
-  <link rel="stylesheet" type="text/css" href="output.css" >
+  <link rel="stylesheet" type="text/css" href="./resources/css/dashboard.css" >
+  <link rel="stylesheet" href="./resources/css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <div class="flex items-center justify-center h-screen bg-discord-gray text-white flex-col">
-        <div class="text-2xl">Welcome to the dashboard,</div>
-        <div class="text-4xl mt-3 flex items-center font-medium" >
-            <img src='' id="avatar" class="rounded-full w-12 h-12 mr-3"/>
+        <div id="basetext">Welcome to the dashboard,</div>
+        <div class="basetext" >
+            <img src='' id="avatar"/>
             <div id="name"></div>
         </div>
         <a href="/" class="text-sm mt-5">Logout</a>
@@ -38,7 +39,7 @@
                 .then((result) => result.json())
                 .then((response) => {
                     const username = response.username;
-                    const avatar = response.avatarUrl;
+                    const avatar = response.avatar;
                     const id = response.id;
                     // Set the welcome username string
                     document.getElementById('name').innerText = `${username}`;
@@ -51,7 +52,6 @@
                     }
                 })
                 .catch(console.error);
-                console.log(response);
         };
 
     </script>
