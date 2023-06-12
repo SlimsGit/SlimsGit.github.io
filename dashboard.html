@@ -44,7 +44,11 @@
                     document.getElementById('name').innerText = `${username}`;
 
                     // Set the avatar image by constructing a URL to access Discord's CDN
-                    document.getElementById("avatar").src = avatar;
+                    if (avatar == null) {
+                        document.getElementById("avatar").src = 'https://ia903204.us.archive.org/4/items/discordprofilepictures/discordblue.png';
+                    } else {
+                        document.getElementById("avatar").src = 'https://cdn.discordapp.com/avatars/${id}/${avatar}.jpg';
+                    }
                 })
                 .catch(console.error);
                 console.log(response);
