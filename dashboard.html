@@ -11,52 +11,56 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <div class="centerall">
-        <div id="basetext">Welcome to the dashboard,</div>
-        <div>
-            <img src='' id="avatar"/>
-            <div id="name"></div>
+    <main>
+        <div class="centerall">
+            <div id="basetext">Welcome to the dashboard,</div>
+            <div>
+                <img src='' id="avatar"/>
+                <div id="name"></div>
+            </div>
         </div>
-    </div>
 
-    <button id="btn" type="button" class="btn btn-dark" onclick="window.location.href='https://discord.gg/PPE3errR7d'">
-        <img id="discordlogo" src="resources/imgs/discordwhite.png"> Join The Discord!
-    </button>
+        <a>
+            <button id="btn" type="button" class="btn btn-dark" onclick="window.location.href='https://discord.gg/PPE3errR7d'">
+                <img id="discordlogo" src="resources/imgs/discordwhite.png"> Join The Discord!
+            </button>
+        </a>
 
-    <script>
-        let tokenType; // Declare tokenType variable ///
+        <script>
+            let tokenType; // Declare tokenType variable ///
 
-        window.onload = () => {
-            const fragment = new URLSearchParams(window.location.hash.slice(1));
-            const accessToken = fragment.get('access_token');
-            tokenType = fragment.get('token_type'); // Assign tokenType a value from the URL fragment
+            window.onload = () => {
+                const fragment = new URLSearchParams(window.location.hash.slice(1));
+                const accessToken = fragment.get('access_token');
+                tokenType = fragment.get('token_type'); // Assign tokenType a value from the URL fragment
 
-            if (!accessToken) {
-                window.location.href = '/';
-                return (document.getElementById('login').style.display = 'block');
-            }
+                if (!accessToken) {
+                    window.location.href = '/';
+                    return (document.getElementById('login').style.display = 'block');
+                }
 
-            fetch('https://discord.com/api/users/@me', {
-                headers: {
-                    authorization: `${tokenType} ${accessToken}`,
-                },
-            })
-                .then((result) => result.json())
-                .then((response) => {
-                    const { username, avatar, id} = response;
-                    // Set the welcome username string
-                    document.getElementById('name').innerText = `${username}`;
-
-                    // Set the avatar image by constructing a URL to access Discord's CDN
-                    if (avatar == null) {
-                        document.getElementById("avatar").src = 'https://ia903204.us.archive.org/4/items/discordprofilepictures/discordblue.png';
-                    } else {
-                        document.getElementById("avatar").src = `https://cdn.discordapp.com/avatars/${id}/${avatar}.jpg`;
-                    }
+                fetch('https://discord.com/api/users/@me', {
+                    headers: {
+                        authorization: `${tokenType} ${accessToken}`,
+                    },
                 })
-                .catch(console.error);
-        };
+                    .then((result) => result.json())
+                    .then((response) => {
+                        const { username, avatar, id} = response;
+                        // Set the welcome username string
+                        document.getElementById('name').innerText = `${username}`;
 
-    </script>
+                        // Set the avatar image by constructing a URL to access Discord's CDN
+                        if (avatar == null) {
+                            document.getElementById("avatar").src = 'https://ia903204.us.archive.org/4/items/discordprofilepictures/discordblue.png';
+                        } else {
+                            document.getElementById("avatar").src = `https://cdn.discordapp.com/avatars/${id}/${avatar}.jpg`;
+                        }
+                    })
+                    .catch(console.error);
+            };
+
+        </script>
+    </main>
 </body>
 </html>

@@ -28,8 +28,6 @@ body {
 #leftcenter {
     margin: auto;
     width: 640px; 
-    padding-right: 20%;
-    padding-left: 20%; 
 }
 
 #discordlogo {
@@ -42,4 +40,5 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    
 }
